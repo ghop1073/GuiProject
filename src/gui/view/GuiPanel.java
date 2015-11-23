@@ -2,11 +2,7 @@ package gui.view;
 
 import gui.controller.GuiController;
 
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JPanel;
-import javax.swing.SpringLayout;
-
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.event.*;
 
@@ -92,12 +88,19 @@ public class GuiPanel extends JPanel
 		{
 			public void mouseMoved(MouseEvent moved)
 			{
-				changeRandomColor();
+				firstButton.setText("Mouse X: " + moved.getX() + " Mouse Y: " + moved.getY());
+				if((moved.getX() > 25 && moved.getX() < 40) && (moved.getY() > 50 && moved.getY() < 70))
+				{
+					changeRandomColor();
+				}
 			}
 			
 			public void mouseDragged(MouseEvent dragged)
 			{
-				changeRandomColor();
+				if(dragged.isAltDown())
+				{
+					firstTextField.setText("you held alt and dragged!");
+				}
 			}
 		});
 		
