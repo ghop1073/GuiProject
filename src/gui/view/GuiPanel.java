@@ -1,10 +1,13 @@
 package gui.view;
 
 import gui.controller.GuiController;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
@@ -64,12 +67,12 @@ public class GuiPanel extends JPanel
 		{
 			public void mouseClicked(MouseEvent clicked)
 			{
-				
+//				changeRandomColor();
 			}
 			
 			public void mouseReleased(MouseEvent released)
 			{
-				
+				changeRandomColor();
 			}
 			
 			public void mousePressed(MouseEvent pressed)
@@ -79,12 +82,12 @@ public class GuiPanel extends JPanel
 			
 			public void mouseEntered(MouseEvent entered)
 			{
-				
+//				changeRandomColor();
 			}
 			
 			public void mouseExited(MouseEvent exited)
 			{
-				
+//				changeRandomColor();
 			}
 		});
 	}
@@ -96,5 +99,7 @@ public class GuiPanel extends JPanel
 		red = (int) (Math.random() * 256);
 		green = (int) (Math.random() * 256);
 		blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green, blue));
 	}
 }
